@@ -1,3 +1,4 @@
+// Create Cloutrail
 resource "aws_cloudtrail" "cloudtrail" {
   name = "${var.aws_account}-cloudtrail"
   cloud_watch_logs_group_arn = "${aws_cloudwatch_log_group.cloudwatch_log_group.arn}"
