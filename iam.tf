@@ -1,7 +1,8 @@
 // Create Cloudtrail IAM Role
 resource "aws_iam_role" "iam_role" {
-    name = "${var.aws_account}-cloudtrail"
-    assume_role_policy = <<EOF
+  name = "${var.aws_account}-cloudtrail"
+
+  assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -20,9 +21,10 @@ EOF
 
 // Create Cloudtrail IAM Role Policy
 resource "aws_iam_role_policy" "iam_role_policy" {
-    name = "${var.aws_account}-cloudtrail-policy"
-    role = "${aws_iam_role.iam_role.id}"
-    policy = <<EOF
+  name = "${var.aws_account}-cloudtrail-policy"
+  role = "${aws_iam_role.iam_role.id}"
+
+  policy = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
